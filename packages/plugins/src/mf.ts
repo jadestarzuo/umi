@@ -75,11 +75,15 @@ export default function mf(api: IApi) {
       typeof api.config.mf.remoteHash === 'boolean'
         ? api.config.mf.remoteHash
         : api.config.hash && api.env !== 'development';
-
+    const remoteVersion = api.config.mf.version;
     const mfConfig = {
       name,
       remotes,
-      filename: useHash ? 'remote.[contenthash:8].js' : 'remote.js',
+      filename: useHash
+        ? 'remote.[contenthash:8].js'
+        : remoteVersion
+        ? `remote-${remoteVersion}.js`
+        : 'remote.js',
       exposes,
       shared,
       library: api.config.mf.library,

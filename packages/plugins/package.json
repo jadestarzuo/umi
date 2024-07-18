@@ -1,6 +1,6 @@
 {
   "name": "@ke/umijs-plugins",
-  "version": "4.3.6-bate4",
+  "version": "4.3.6-bate5",
   "description": "@ke/umijs-plugins是基于@umijs/plugins，主要针对mf增加版本号",
   "homepage": "https://github.com/umijs/umi/tree/master/packages/plugins#readme",
   "bugs": "https://github.com/umijs/umi/issues",
@@ -29,7 +29,6 @@
     "@ant-design/icons": "^4.7.0",
     "@ant-design/moment-webpack-plugin": "^0.0.3",
     "@ant-design/pro-components": "^2.0.1",
-    "@ke/umijs-plugins": "file:.yalc/@ke/umijs-plugins",
     "@tanstack/react-query": "^4.24.10",
     "@tanstack/react-query-devtools": "^4.24.10",
     "@umijs/bundler-utils": "workspace:*",

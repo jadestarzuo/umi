@@ -1,7 +1,7 @@
 import { parseModule } from '@umijs/bundler-utils';
 import { existsSync, opendirSync, readFileSync } from 'fs';
 import { join } from 'path';
-import type { IApi } from 'umi';
+import type { IApi as OriginalIApi } from 'umi';
 import { lodash, winPath } from 'umi/plugin-utils';
 import { TEMPLATES_DIR } from './constants';
 import { toRemotesCodeString } from './utils/mfUtils';
@@ -11,6 +11,16 @@ const { isEmpty } = lodash;
 const mfSetupPathFileName = '_mf_setup-public-path.js';
 const mfAsyncEntryFileName = 'asyncEntry.ts';
 const MF_TEMPLATES_DIR = join(TEMPLATES_DIR, 'mf');
+
+// 扩展 IApi 接口
+export interface IApi extends OriginalIApi {
+  config: {
+    mf: {
+      version?: string;
+      // 其他属性
+    };
+  };
+}
 
 export default function mf(api: IApi) {
   api.describe({

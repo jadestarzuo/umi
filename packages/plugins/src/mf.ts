@@ -226,7 +226,7 @@ export default function mf(api: IApi) {
   const entries = ${JSON.stringify(remote.entries)};
   const key = ${remote.keyResolver};
 
-  const remoteUrlWithVersion = entries[key] + '?r=' + ${Math.random()};
+  const remoteUrlWithVersion = entries[key];
   const script = document.createElement('script')
   script.src = remoteUrlWithVersion
   script.onload = () => {

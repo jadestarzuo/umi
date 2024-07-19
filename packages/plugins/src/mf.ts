@@ -132,7 +132,7 @@ export default function mf(api: IApi) {
     api.writeTmpFile({
       // ref https://webpack.js.org/concepts/module-federation/#infer-publicpath-from-script
       content: `/* infer remote public */;
-      __webpack_public_path__ = (document.currentScript.src.match(/\?.+=/) ? document.currentScript.src.substring(0, document.currentScript.src.match(/\?.+=/).index) : document.currentScript.src) + '/../';`,
+      __webpack_public_path__ = (document.currentScript.src.match(/\\?.+=/) ? document.currentScript.src.substring(0, document.currentScript.src.match(/\\?.+=/).index) : document.currentScript.src) + '/../';`,
       path: mfSetupPathFileName,
     });
 
